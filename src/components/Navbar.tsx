@@ -1,0 +1,77 @@
+import React, { useState } from 'react'
+import { Button } from './ui/button'
+import { IoMenuOutline } from 'react-icons/io5'
+
+export const Navbar = () => {
+    const [showMenu,setShowMenu] = useState(false);
+  return (
+      <nav className="bg-white shadow-lg">
+          <div className="max-w-screen-xl mx-auto flex justify-between items-center px-5 md:px-30 py-4 font-poppins font-bold ">
+              {/* Logo */}
+              <div className="relative inline-block text-2xl  font-bold tracking-[3px] ml-0  ">
+                  SC&nbsp;&nbsp;&nbsp;ZA
+                  <img
+                      src="scaza-logo.png"
+                      alt="Scaza Logo"
+                      className="absolute top-1 left-10 h-5 w-5 "
+                  />
+              </div>
+
+              {/* Nav Links */}
+              <ul className="hidden md:flex items-center gap-10 w-[40%] ">
+                  <li>
+                      <a href="#personal" className="">Personal</a>
+                  </li>
+                  <li>
+                      <a href="#business" className="">Business</a>
+                  </li>
+                  <li>
+                      <a href="#company" className="">Company</a>
+                  </li>
+                  <li>
+                      <a href="#help" className="">Help</a>
+                  </li>
+              </ul>
+
+              {/* Actions */}
+              <div className="hidden md:flex items-center gap-5 w-[20%] pr-[40px]">
+                  
+                  <Button className="bg-[#225C07] ">
+                      Join Scaza
+                  </Button>
+              </div>
+
+             {/* Hamburger */}
+              <div className="md:hidden">
+                  <IoMenuOutline size={28} onClick={() => setShowMenu(!showMenu)} />
+                    {
+                        showMenu && (
+                            <div className="absolute top-12 right-0 bg-white shadow-lg rounded-md w-full h-[300px] text-center">
+                                <ul className="flex flex-col gap-10 p-2">
+                                    <li>
+                                        <a href="#personal" className="">Personal</a>
+                                    </li>
+                                    <li>
+                                        <a href="#business" className="">Business</a>
+                                    </li>
+                                    <li>
+                                        <a href="#company" className="">Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#help" className="">Help</a>
+                                    </li>
+                                </ul>
+                                <div className="p-5">
+                                    <Button className="bg-[#225C07] w-[50%]">
+                                        Join Scaza
+                                    </Button>
+                                </div>
+                            </div>
+                        )
+                    }
+              </div>
+          </div>
+      </nav>
+  )
+}
+
