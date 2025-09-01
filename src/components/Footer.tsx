@@ -4,23 +4,45 @@ import React from "react";
 const footerSections = [
     {
         title: "Personal",
-        links: ["Personal Account", "QR Card", "Payment"],
+        links: [
+            { name: "Personal Account", href: "/personal/account" },
+            { name: "QR Card", href: "/personal/qr-card" },
+            { name: "Payment", href: "/personal/payment" },
+        ],
+        
     },
     {
         title: "Business",
-        links: ["Business Account", "QR Card", "Payment"],
+        links: [
+            { name: "Business Account", href: "/business/account" },
+            { name: "QR Card", href: "/business/qr-card" },
+            { name: "Payment", href: "/business/payment" },
+        ],
     },
     {
         title: "Company",
-        links: ["Blog", "Join our Team", "About us", "Press"],
+         links: [
+            { name: "Blog", href: "/blog" },
+            { name: "Join our Team", href: "/team" },
+            { name: "About us", href: "/about-us" },
+            { name: "Press", href: "/press" },
+    ],    
     },
     {
         title: "Help",
-        links: ["Get Help", "FAQs", "Contact us", "Security"],
+        links: [
+            { name: "Get Help", href: "/help" },
+            { name: "FAQs", href: "/faq" },
+            { name: "Contact us", href: "/contact-page" },
+            { name: "Security", href: "/security" },
+        ],
     },
     {
         title: "Resources",
-        links: ["Terms & Condition", "Privacy Policy"],
+        links: [
+            { name: "Terms & Condition", href: "/terms-and-conditions" },
+            { name: "Privacy Policy", href: "/privacy-policy" },
+        ],
     },
 ];
 
@@ -130,10 +152,10 @@ const Footer = () => {
                                     {section.links.map((link, linkIndex) => (
                                         <li key={linkIndex}>
                                             <a
-                                                href="#"
+                                                href={link.href}
                                                 className="text-[14px]"
                                             >
-                                                {link}
+                                                {link.name}
                                             </a>
                                         </li>
                                     ))}

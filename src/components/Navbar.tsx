@@ -20,16 +20,16 @@ export const Navbar = () => {
               {/* Nav Links */}
               <ul className="hidden md:flex items-center gap-10 w-[40%] ">
                   <li>
-                      <a href="#personal" className="">Personal</a>
+                      <a href="/blog" className="">Personal</a>
                   </li>
                   <li>
-                      <a href="#business" className="">Business</a>
+                      <a href="/blog" className="">Business</a>
                   </li>
                   <li>
-                      <a href="#company" className="">Company</a>
+                      <a href="/team" className="">Company</a>
                   </li>
                   <li>
-                      <a href="#help" className="">Help</a>
+                      <a href="/faq" className="">Help</a>
                   </li>
               </ul>
 
