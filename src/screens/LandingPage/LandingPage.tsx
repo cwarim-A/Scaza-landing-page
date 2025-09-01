@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import { Link } from "react-router-dom";
 
 const navigationItems = [
-  { label: "Personal", href: "#" },
-  { label: "Business", href: "#" },
-  { label: "Company", href: "#" },
-  { label: "Help", href: "#" }
+  { label: "Personal", href: "/blog" },
+  { label: "Business", href: "/blog" },
+  { label: "Company", href: "/team" },
+  { label: "Help", href: "/faq" }
 ];
 
 const featureCards = [
@@ -112,13 +113,13 @@ export const LandingPage = (): JSX.Element => {
             </div>
             <nav className="flex items-center gap-8 absolute top-4 left-[341px]">
               {navigationItems.map((item, index) => (
-                <Button
+                <Link
                   key={index}
-                  variant="ghost"
+                  to={item.href}
                   className="h-auto p-2.5 [font-family:'Poppins',Helvetica] font-medium text-black text-[15px] tracking-[0.75px]"
                 >
                   {item.label}
-                </Button>
+                </Link>
               ))}
             </nav>
             <div className="absolute top-[21px] left-[1048px] [font-family:'Poppins',Helvetica] font-medium text-black text-[15px] text-center tracking-[0.75px] leading-[normal]">
