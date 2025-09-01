@@ -6,7 +6,7 @@ import { AboutPage } from "./screens/AboutPage/AboutPage";
 import { Team } from "./screens/Team/Team";
 import { Blog } from "./screens/Blog/Blog";
 import { Faq } from "./screens/FAQ/Faq";
-import { Contact } from "lucide-react";
+import { Contact } from "./screens/Contact/Contact";
 import { ContactPage } from "./screens/Contact/ContactPage";
 import { Social } from "./screens/Social/Social";
 import { PrivacyPolicy } from "./screens/Policy/PrivacyPolicy";
