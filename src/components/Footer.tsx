@@ -71,7 +71,7 @@ const footerIcons = [
 
 const Footer = () => {
     return (
-        <footer className="bg-[#EAFFE04D]  h-[200vh] md:h-[500px]  px-5 md:px-10 py-10 font-poppins">
+        <footer className="bg-[#EAFFE04D]  h-auto md:h-[500px]  px-5 md:px-10 py-10 font-poppins">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
                 {/* Left Section */}
                 <div className=" w-full md:w-[50%] md:ml-[45px]">
@@ -126,18 +126,18 @@ const Footer = () => {
 
                     {/* Address */}
                     <div className="py-5">
-                        <p className="py-3 max-w-sm text-[14px] leading-relaxed">
+                        {/* <p className="py-3 max-w-sm text-[14px] leading-relaxed">
                             Plot 3A, Block 7,<br />
                             Adeleke Road,<br />
                             Lekki Phase 1, Lagos State.{" "}
-                        </p>
+                        </p> */}
                         <span className="underline">support@scaza.com</span>
                     </div>
 
                     {/* Copyright */}
                     <div>
                         <p className="font-bold text-[12px] py-3">
-                            Copyright © 2025, Moniepoint
+                            Copyright © 2025, Scaza
                         </p>
                     </div>
                 </div>

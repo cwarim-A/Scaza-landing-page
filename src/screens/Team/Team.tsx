@@ -26,7 +26,7 @@ const teamMembers = [
     },
     {
         name: "TAJUDEEN WARIZ",
-        role: "Co-Founder/CEO",
+        role: "Co-Founder/Mobile Engineer",
         image: "/CTO.jpg",
         link: ""
     },
@@ -93,12 +93,12 @@ export const Team = (): JSX.Element => {
                 <p className="text-base md:text-lg max-w-2xl py-6">Come join a team that's redefining the financial payment  experience for millions
                     of people in emerging markets.
                 </p>
-                <button className="bg-[#225C07] py-5 px-5 text-white text-[20px] font-bold rounded-md w-[20%] mt-10 ">
+                <button className="bg-[#225C07] w-full py-5 px-5 text-white text-[20px] font-bold rounded-md md:w-[20%] mt-10 ">
                     Join our Team
                 </button>
             </section>
             <section className="bg-[#225C07] [font-family:'Poppins',Helvetica] w-full h-[300px] relative ">
-                <button className="absolute left-[43%] top-[75%] bg-[#ffff] py-3 px-5 text-[20px] font-bold rounded-md w-[15%] ">
+                <button className="absolute w-[50%] left-[27%] top-[75%] md:left-[43%] md:top-[75%] bg-[#ffff] py-3 px-5 text-[20px] font-bold rounded-md md:w-[15%] ">
                     Join Scaza
                 </button>
             </section>
