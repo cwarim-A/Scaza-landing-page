@@ -63,6 +63,8 @@ const testimonials = [
   }
 ];
 
+
+// Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
@@ -72,6 +74,21 @@ const fadeInUp = {
   })
 };
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.8 } }
+};
+
+const slideLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+};
+
 
 
 export const LandingPage = (): JSX.Element => {
@@ -79,10 +96,18 @@ export const LandingPage = (): JSX.Element => {
     <div className="font-poppins">
       <Navbar />
       <section className=" flex  flex-col md:flex-row justify-center items-center gap-10 md:gap-40 py-10 md:py-20 px-5 md:px-0 ">
-        <div>
-          <h2 className="font-bold text-2xl md:text-4xl text-[#4CBB17] leading-loose">Always better than cash, <br className="hidden md:block" /> Scan. Pay. Go</h2>
-          <p className="py-5">Redefining payments in Africa and <br /> beyond. One scan at a time.</p>
-          <div className="flex items-center gap-3">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}>
+          <motion.h2
+            className="font-bold text-2xl md:text-4xl text-[#4CBB17] leading-loose"
+            variants={fadeInUp}>Always better than cash, <br className="hidden md:block" /> Scan. Pay. Go</motion.h2>
+          <motion.p className="py-5" variants={fadeInUp}>Redefining payments in Africa and <br /> beyond. One scan at a time.</motion.p>
+          <motion.div
+            className="flex items-center gap-3"
+            variants={fadeInUp}>
             {/* Play Store */}
             <a
               href="https://scaza.com.ng/pilot/scaza.apk"
@@ -112,13 +137,22 @@ export const LandingPage = (): JSX.Element => {
                 <span className="text-[12px] font-semibold">APPLE STORE</span>
               </div>
             </a>
-          </div>
-        </div>
-        <div>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}>
           <img src="/scaza-mockup.png" alt="" className="hidden md:block w-[300px] h-[300px] mr-20" />
-        </div>
+        </motion.div>
       </section>
-      <section className="  md:py-10 flex flex-col justify-center items-center  gap-7">
+      <motion.section
+        className="md:py-10 flex flex-col justify-center items-center gap-7"
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: true }}>
         <h1 className=" text-3xl font-bold">
           {" "}
           The <span className="text-[#4CBB17] text-4xl font-bold">
@@ -130,26 +164,40 @@ export const LandingPage = (): JSX.Element => {
           Scaza is your trusted payment solution, offering secure and <br />{" "}
           instant transactions through advanced QR code technology.
         </p>
-      </section>
+      </motion.section>
       <section className="px-5  md:px-[180px] py-[25px]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 ">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {
             featureCards.map((card, index) => (
-              <div key={index} className="  flex flex-col gap-4 shadow-md  px-5 text-[12px] py-3 rounded-2xl">
+              < motion.div
+                key={index}
+                custom={index}
+                variants={fadeInUp} className="  flex flex-col gap-4 shadow-md  px-5 text-[12px] py-3 rounded-2xl">
                 <img src={card.icon} alt={card.title} className="h-8 w-8 text-center" />
                 <p className="text-[12px]">{card.title}</p>
-              </div>
+              </motion.div>
             ))
           }
-        </div> 
-        
-        
+        </motion.div>
+
+
       </section>
       <section>
         {/* First Block */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 px-5 md:px-40 py-5 ">
           {/* Text */}
-          <div className="flex flex-col gap-5 md:w-1/2">
+          <motion.div
+            className="flex flex-col gap-5 md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideLeft}
+            viewport={{ once: true }}
+>
             <h2 className="text-2xl md:text-4xl text-[#225C07] font-bold">
               One Scan + <br className="hidden md:block" /> one tap ={" "}
               <br className="hidden md:block" /> instant payment
@@ -162,31 +210,47 @@ export const LandingPage = (): JSX.Element => {
             <button className="bg-[#225C07] w-full md:w-[40%] text-white py-2 rounded-lg">
               Open an account
             </button>
-          </div>
+          </motion.div>
 
           {/* Image */}
-          <div className="md:w-1/2 flex justify-center">
+          <motion.div
+            className="md:w-1/2 flex justify-center"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideRight}
+            viewport={{ once: true }}>
             <img
               src="/first-image.jpg"
               alt="Scaza Scan Example"
               className="rounded-full max-w-sm w-full"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* Second Block */}
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-5 md:px-40 py-5 ">
           {/* Image */}
-          <div className="md:w-1/2 ">
+          <motion.div
+            className="md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideLeft}
+            viewport={{ once: true }}
+>
             <img
               src="/one-app.jpg"
               alt="Scaza App Example"
               className="rounded-full max-w-sm w-full"
             />
-          </div>
+          </motion.div>
 
           {/* Text */}
-          <div className="flex flex-col gap-5 md:w-1/2">
+          <motion.div
+            className="flex flex-col gap-5 md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideRight}
+            viewport={{ once: true }}>
             <h2 className="text-2xl md:text-4xl text-[#225C07] font-bold">
               One app that makes every payment easy
             </h2>
@@ -194,12 +258,17 @@ export const LandingPage = (): JSX.Element => {
               Make payments faster than ever — just scan the QR code and you’re
               done. No cash, no cards, no hassle.
             </p>
-          </div>
+          </motion.div>
         </div>
         {/* Third Block */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 px-5 md:px-40 py-5 ">
           {/* Text */}
-          <div className="flex flex-col gap-5 md:w-1/2">
+          <motion.div
+            className="flex flex-col gap-5 md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideLeft}
+            viewport={{ once: true }}>
             <h2 className="text-2xl md:text-4xl text-[#225C07] font-bold">
               Effortless Payment with unmatched security.
             </h2>
@@ -207,30 +276,47 @@ export const LandingPage = (): JSX.Element => {
               Our advanced QR technology ensures every payment is safe,
               seamless, and instantly processed.
             </p>
-          </div>
+          </motion.div>
 
           {/* Image */}
-          <div className="md:w-1/2 flex justify-center">
+          <motion.div
+            className="md:w-1/2 flex justify-center"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideRight}
+            viewport={{ once: true }}
+>
             <img
               src="/third-image.jpg"
               alt="Scaza Scan Example"
               className="rounded-full max-w-sm w-full"
             />
-          </div>
+          </motion.div>
         </div>
         {/* Fourth Block */}
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-5 md:px-40 py-5 ">
           {/* Image */}
-          <div className="md:w-1/2 ">
+          <motion.div
+            className="md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideLeft}
+            viewport={{ once: true }}>
             <img
               src="/fourth-image.jpg"
               alt="Scaza App Example"
               className="rounded-full max-w-sm w-full"
             />
-          </div>
+          </motion.div>
 
           {/* Text */}
-          <div className="flex flex-col gap-5 md:w-1/2">
+          <motion.div
+            className="flex flex-col gap-5 md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            variants={slideRight}
+            viewport={{ once: true }}
+>
             <h2 className="text-2xl md:text-4xl text-[#225C07] font-bold">
               Rewards that comes with every scan.
             </h2>
@@ -238,14 +324,23 @@ export const LandingPage = (): JSX.Element => {
               With Scaza, unlock exclusive discounts and cashback rewards with
               transaction you make.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className="py-10">
-        <h2 className="text-2xl text-[#225C07] text-center font-bold">
+        <motion.h2 initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          viewport={{ once: true }}
+          className="text-2xl text-[#225C07] text-center font-bold">
           What our users says
-        </h2>
-        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
+        </motion.h2>
+        <motion.div
+          className="relative overflow-hidden py-[50px] px-2 md:px-0"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          viewport={{ once: true }}>
           <div className=" flex flex-row gap-5 animate-scroll">
             {testimonials.map((testimonial, index) => (
               <div
@@ -264,9 +359,15 @@ export const LandingPage = (): JSX.Element => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
-      <section className="bg-[#FCFFFA] h-[250px] py-10 border border-1">
+      <motion.section
+        className="bg-[#FCFFFA] h-[250px] py-10 border border-1"
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeIn}
+        viewport={{ once: true }}
+>
         <h2 className="text-center text-[#225C07] text-2xl font-bold">
           Our Partners
         </h2>
@@ -275,9 +376,15 @@ export const LandingPage = (): JSX.Element => {
           alt="Our Partners"
           className="mx-auto h-full object-contain"
         />
-      </section>
+      </motion.section>
       <section className="flex flex-col h-[800px] md:h-[500px] md:flex-row justify-between px-5  md:px-40 gap-20 py-20 ">
-        <div className="w-full md:w-1/2 flex flex-col gap-3">
+        <motion.div
+          className="w-full md:w-1/2 flex flex-col gap-3"
+          initial="hidden"
+          whileInView="visible"
+          variants={slideLeft}
+          viewport={{ once: true }}
+>
           <h2 className="text-xl font-bold text-[#4CBB17]">
             Get the Scaza Qr Code card for seamless payments.
           </h2>
@@ -319,10 +426,15 @@ export const LandingPage = (): JSX.Element => {
               </div>
             </a>
           </div>
-        </div>
-        <div className="w-full md:w-1/2">
-             <img src="/Qr-scan.jpg" alt="QR Code" className="h-[300px] w-[350px] rounded-lg" />
-        </div>
+        </motion.div>
+        <motion.div
+          className="w-full md:w-1/2"
+          initial="hidden"
+          whileInView="visible"
+          variants={slideRight}
+          viewport={{ once: true }}>
+          <img src="/Qr-scan.jpg" alt="QR Code" className="h-[300px] w-[350px] rounded-lg" />
+        </motion.div>
       </section>
       <Footer />
     </div>

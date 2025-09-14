@@ -21,10 +21,10 @@ export const Navbar = (): JSX.Element => {
                 {/* Nav Links */}
                 <ul className="hidden md:flex items-center gap-10 w-[40%] ">
                     <li>
-                        <Link to="/blog" className="">Personal</Link>
+                        <Link to="/" className="">Personal</Link>
                     </li>
                     <li>
-                        <Link to="/blog" className="">Business</Link>
+                        <Link to="/" className="">Business</Link>
                     </li>
                     <li>
                         <Link to="/team" className="">Company</Link>

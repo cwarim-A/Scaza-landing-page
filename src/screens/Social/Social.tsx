@@ -1,8 +1,9 @@
-import React from 'react'
+
+
+
 import { Navbar } from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { Link } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 
 const footerIcons = [
     {
@@ -37,26 +38,53 @@ export const Social = () => {
         <div className='font-poppins'>
             <Navbar />
             <section className='min-h-[60vh] flex justify-center items-center px-5 py-20 sm:py-32'>
-                <div className='w-full max-w-[900px] bg-[#E1ECD9] rounded-2xl flex flex-col items-center py-10 px-5 sm:px-10'>
-                    <h2 className='text-xl sm:text-2xl font-bold text-center py-3 '>Follow Us on Social Media</h2>
-                    <p className='text-sm sm:text-base text-center '>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className='w-full max-w-[900px] bg-[#E1ECD9] rounded-2xl flex flex-col items-center py-10 px-5 sm:px-10'
+                >
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                        className='text-xl sm:text-2xl font-bold text-center py-3'
+                    >
+                        Follow Us on Social Media
+                    </motion.h2>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                        className='text-sm sm:text-base text-center'
+                    >
                         Stay updated with the lastest thing on scaza
-                    </p>
-                    <div className="flex items-center gap-5  mt-9">
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.6, duration: 0.5 }}
+                        className="flex items-center gap-5 mt-9"
+                    >
                         {footerIcons.map((icon) => (
-                            <div key={icon.id} className="flex items-center justify-center">
-                                <a
-                                    href={icon.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                ><img src={icon.image} alt={`Icon ${icon.id}`} className="h-8 w-8" /></a>
-                            </div>
+                            <motion.a
+                                key={icon.id}
+                                href={icon.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.15 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex items-center justify-center"
+                            >
+                                <img src={icon.image} alt={`Icon ${icon.id}`} className="h-8 w-8" />
+                            </motion.a>
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </section>
             <Footer />
         </div>
     )
 }
-
