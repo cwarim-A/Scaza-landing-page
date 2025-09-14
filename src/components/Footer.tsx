@@ -6,8 +6,8 @@ const footerSections = [
         title: "Personal",
         links: [
             { name: "Personal Account", href: "/personal/account" },
-            { name: "QR Card", href: "/personal/qr-card" },
-            { name: "Payment", href: "/personal/payment" },
+            // { name: "QR Card", href: "/personal/qr-card" },
+            // { name: "Payment", href: "/personal/payment" },
         ],
         
     },
@@ -15,8 +15,8 @@ const footerSections = [
         title: "Business",
         links: [
             { name: "Business Account", href: "/business/account" },
-            { name: "QR Card", href: "/business/qr-card" },
-            { name: "Payment", href: "/business/payment" },
+            // { name: "QR Card", href: "/business/qr-card" },
+            // { name: "Payment", href: "/business/payment" },
         ],
     },
     {
@@ -25,7 +25,7 @@ const footerSections = [
             { name: "Blog", href: "/blog" },
             { name: "Join our Team", href: "/team" },
             { name: "About us", href: "/about-us" },
-            { name: "Press", href: "/press" },
+            // { name: "Press", href: "/press" },
     ],    
     },
     {
@@ -33,7 +33,7 @@ const footerSections = [
         links: [
             { name: "Get Help", href: "/help" },
             { name: "FAQs", href: "/faq" },
-            { name: "Contact us", href: "/contact-page" },
+            { name: "Contact us", href: "/contact" },
             { name: "Security", href: "/security" },
         ],
     },

@@ -11,8 +11,8 @@ export const ContactPage = (): JSX.Element => {
         <p className='mt-6 text-sm md:text-base max-w-2xl '>We are accessible at all times. <br /> Tell us how we may be of assistance.</p>
       </section>
       <section className='h-[650px] bg-gray-100 flex justify-center items-center py-60 px-7'>
-        <div className='w-[500px] md:w-[500px] h-[550px] md:h-[500px] bg-white rounded-2xl shadow-md px-7'>
-          <div className='flex flex-col md:flex-row  gap-6 md:gap-4 py-4 '>
+        <div className='w-[400px] md:w-[500px] h-[550px] md:h-[500px] bg-white rounded-2xl shadow-md px-7'>
+          <div className='flex flex-col md:flex-row gap-6 md:gap-4 py-4 '>
             <div className='flex flex-col gap-2'>
               <label>First Name</label>
               <input type="text" className='w-full border border-gray-300 py-2  md:px-5 rounded-sm focus:outline-none' />
@@ -40,7 +40,7 @@ export const ContactPage = (): JSX.Element => {
                 type="tel"
                 id="phone"
                 placeholder=""
-                className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none  "
+                className=" w-[170px]  md:w-96 border border-gray-300 rounded-md px-3 py-2 focus:outline-none  "
               />
             </div>
           </div>

@@ -2,25 +2,30 @@ import React from 'react'
 import { Navbar } from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { icons } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const cardContent = [
     {
         icon: "/question.png",
         title: "Have a question?",
         desc: "Check out our FAQ section for answers to some of our most common customer questions.It’s the fastest way to get the answer you’re looking for",
-        msg: "Visit our FAQs page"
+        msg: "Visit our FAQs page",
+        link:"/faq"
     },
     {
         icon: "/message.png",
         title: "Send us a message",
         desc: "Our priority is your satisfaction, support team is available to take your queries and deliver on-time response.",
-        msg: "Send us a message"
+        msg: "Send us a message",
+        link:"/contact-page"
     },
     {
         icon: "/socials.png",
         title: "Our Socials",
         desc: "Stay connected with us on our official social media channel for updates, news and support.",
-        msg: "Visit our social media page"
+        msg: "Visit our social media page",
+        link:"/social"
+
     }
 ]
 
@@ -35,7 +40,7 @@ export const Contact = () => {
                         <img src={card.icon} alt={card.title} className='w-[40px] h-[40px]' />
                         <h3 className='text-[18px] font-bold text-[#4CBB17] py-5'>{card.title}</h3>
                         <p className='text-[14px]'>{card.desc}</p>
-                        <button className='text-[14px] text-left font-bold text-[#4CBB17] mt-5'>{card.msg}</button>
+                        <Link to={card.link}><button className='text-[14px] text-left font-bold text-[#4CBB17] mt-5'>{card.msg}</button></Link>
                     </div>
                 ))}
             </main>

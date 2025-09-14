@@ -1,16 +1,10 @@
-import React from "react";
-import { Button } from "../../components/ui/button";
-import { Card, CardContent } from "../../components/ui/card";
-import { Link } from "react-router-dom";
+
 import Footer from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
+import { motion } from "framer-motion";
 
-const navigationItems = [
-  { label: "Personal", href: "/blog" },
-  { label: "Business", href: "/blog" },
-  { label: "Company", href: "/team" },
-  { label: "Help", href: "/faq" }
-];
+
+
 
 const featureCards = [
   {
@@ -69,37 +63,37 @@ const testimonials = [
   }
 ];
 
-const footerSections = [
-  {
-    title: "Personal",
-    links: ["Personal Account", "QR Card", "Payment"]
-  },
-  {
-    title: "Business",
-    links: ["Personal Account", "Qr Card", "Payment"]
-  },
-  {
-    title: "Company",
-    links: ["Blog", "Join our Team", "About us", "Press"]
-  },
-  {
-    title: "Help",
-    links: ["Get Help", "FAQs", "Contact us", "Security"]
-  },
-  {
-    title: "Resources",
-    links: ["Terms & Condition", "Privacy Policy"]
-  }
-];
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" }
+  })
+};
+
+
 
 export const LandingPage = (): JSX.Element => {
   return (
     <div className="font-poppins">
       <Navbar />
       <section className=" flex  flex-col md:flex-row justify-center items-center gap-10 md:gap-40 py-10 md:py-20 px-5 md:px-0 ">
-        <div>
-          <h2 className="font-bold text-2xl md:text-4xl text-[#4CBB17] leading-loose">Always better than cash, <br className="hidden md:block" /> Scan. Pay. Go</h2>
-          <p className="py-5">Redefining payments in Africa and <br /> beyond. One scan at a time.</p>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}>
+          <motion.h2
+            className="font-bold text-2xl md:text-4xl text-[#4CBB17] leading-loose"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+          >Always better than cash, <br className="hidden md:block" /> Scan. Pay. Go</motion.h2>
+          <motion.p
+            className="py-5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}>Redefining payments in Africa and <br /> beyond. One scan at a time.</motion.p>
           <div className="flex items-center gap-3">
             {/* Play Store */}
             <a
@@ -131,10 +125,14 @@ export const LandingPage = (): JSX.Element => {
               </div>
             </a>
           </div>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+>
           <img src="/scaza-mockup.png" alt="" className="hidden md:block w-[300px] h-[300px] mr-20" />
-        </div>
+        </motion.div>
       </section>
       <section className="  md:py-10 flex flex-col justify-center items-center  gap-7">
         <h1 className=" text-3xl font-bold"> The <span className="text-[#4CBB17] text-4xl font-bold">Scaza</span> Difference</h1>
@@ -232,16 +230,25 @@ export const LandingPage = (): JSX.Element => {
         <h2 className="text-2xl text-[#225C07] text-center font-bold">
           What our users says
         </h2>
-        <div className="grid  grid-cols-1 md:grid-cols-5 gap-5 py-[50px] px-2 md:px-0 ">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className=" flex flex-col w-full md:w-[263px]  justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl">
-              <p className=" py-3">{testimonial.text}</p>
-              <div className="flex items-center gap-2">
-                <img src={testimonial.avatar} alt={testimonial.author} className="rounded-full h-5 w-5" />
-                <p className="text-[12px] font-bold "> {testimonial.author}</p>
+        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
+          <div className=" flex flex-row gap-5 animate-scroll">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl"
+              >
+                <p className="py-3">{testimonial.text}</p>
+                <div className="flex items-center gap-2">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    className="rounded-full h-5 w-5"
+                  />
+                  <p className="text-[12px] font-bold">{testimonial.author}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
       <section className="bg-[#FCFFFA] h-[250px] py-10 border border-1">
@@ -286,7 +293,7 @@ export const LandingPage = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-             <img src="/Qr-scan.jpg" alt="QR Code" className="h-[300px] w-[350px] rounded-lg" />
+          <img src="/Qr-scan.jpg" alt="QR Code" className="h-[300px] w-[350px] rounded-lg" />
         </div>
       </section>
       <Footer />

@@ -71,7 +71,7 @@ export const AboutPage = (): JSX.Element => {
     return (
         <div className='font-poppins'>
             <Navbar />
-            <section className="h-[400px] px-5 py-10 md:px-40 md:py-40">
+            <section className=" h-[300px] md:h-[400px] px-5 py-10 md:px-40 md:py-40">
                 <h2 className="text-2xl text-[#4CBB17] font-bold">About Scaza</h2>
                 <p className="w-full md:w-[30%] py-5 font-semibold">We specialize in QR-code-based payments and scan-to-pay solutions across Africa and beyond.</p>
                 <button className="bg-[#225C07] text-white px-6 py-3 rounded-md">
@@ -80,12 +80,12 @@ export const AboutPage = (): JSX.Element => {
             </section>
             <section className="">
                 <div className="w-[100%] mx-auto text-center ">
-                    <h2 className="text-2xl text-[#4CBB17] font-bold">Our Mission</h2>
-                    <p className=" w-[100%] mx-auto text-base py-5">Scaza’s mission is to deliver fast, secure, fraud-free, and convenient <br /> financial transactions using QR-code technology, empowering merchants <br /> and customers with real-time visibility and operational efficiency</p>
+                    <h2 className="text-2xl text-[#4CBB17] font-bold ">Our Mission</h2>
+                    <p className=" w-[100%] mx-auto text-base py-5 px-5 md:px-0">Scaza’s mission is to deliver fast, secure, fraud-free, and convenient <br className="hidden md:block" /> financial transactions using QR-code technology, empowering merchants <br className="hidden md:block" /> and customers with real-time visibility and operational efficiency</p>
                 </div>
             </section>
             <section>
-                <div className="w-[100%] px-10 md:px-40 flex flex-wrap gap-8 py-5">
+                <div className="w-[100%] items-center justify-center md:px-40 flex flex-wrap gap-8 py-5">
                     {
                         images.map((image, index) => (
                             <div key={index} className="flex flex-col items-center">
@@ -97,8 +97,8 @@ export const AboutPage = (): JSX.Element => {
             </section>
             <section className="h-auto px-5 md:px-40 py-10">
                 <h2 className="text-2xl text-[#4CBB17] font-bold text-center md:text-left">Our Vision</h2>
-                <p className="w-full md:w-[40%] py-5 font-semibold">Scaza envisions a world where cashless transactions powered by QR codes are the norm—streamlined, trusted, and globally integrated.</p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-1 px-5 md:px-0 py-5">
+                <p className="w-full md:w-[40%] py-5  font-semibold">Scaza envisions a world where cashless transactions powered by QR codes are the norm—streamlined, trusted, and globally integrated.</p>
+                <div className="grid grid-cols-1 justify-items-center md:grid-cols-3 gap-10 md:gap-1 px-5 md:px-0 py-5">
                     {
                         visionImages.map((image, index) => (
                             <div key={index} className="flex flex-col items-start gap-2 py-3 border px-5 rounded-2xl shadow-md w-[280px]">
@@ -111,9 +111,9 @@ export const AboutPage = (): JSX.Element => {
                 </div>
             </section>
             <section className="h-[600px] md:h-[400px] bg-[#225C07] text-white px-5 md:px-20 py-10 flex flex-col md:flex-row items-center gap-10 md:gap-5">
-                <div className=" w-[300px] h-[250px]  md:w-[400px] md:h-[300px] bg-white rounded-2xl px-10">
-
-                </div>
+                
+                    <img src="/who-we-are.jpg" alt="Who-we-are" className="w-[300px] h-[250px]  md:w-[400px] md:h-[300px] rounded-2xl bg-cover bg-center" />
+                 
                 <div className="flex flex-col gap-3 md:gap-5 w-full md:w-[420px]">
                     <h2 className="text-2xl font-bold text-white text-center md:text-left">
                         Who We Are

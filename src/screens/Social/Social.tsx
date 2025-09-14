@@ -1,28 +1,34 @@
 import React from 'react'
 import { Navbar } from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import { Link } from 'react-router-dom'
 
 
 const footerIcons = [
     {
         id: 1,
-        image: "/Facebook.png"
+        image: "/Facebook.png",
+        link: "https://www.facebook.com/profile.php?id=61579367357638"
     },
     {
         id: 2,
-        image: "/Twitter.png"
+        image: "/Twitter.png",
+        link: "https://x.com/SCAZA_NG?t=Kcz0gZbq9e9b0x8VGMFt0A&s=09"
     },
     {
         id: 3,
-        image: "/Instagram.png"
+        image: "/Instagram.png",
+        link: "https://www.instagram.com/scazang?igsh=MXVwNHF1ODRxM2RieQ=="
     },
     {
         id: 4,
-        image: "/Linkedin.png"
+        image: "/Linkedin.png",
+        link: "https://www.linkedin.com/company/scaza1/"
     },
     {
         id: 5,
-        image: "/Youtube.png"
+        image: "/Youtube.png",
+        link: ""
     }
 ]
 
@@ -39,7 +45,11 @@ export const Social = () => {
                     <div className="flex items-center gap-5  mt-9">
                         {footerIcons.map((icon) => (
                             <div key={icon.id} className="flex items-center justify-center">
-                                <img src={icon.image} alt={`Icon ${icon.id}`} className="h-8 w-8" />
+                                <a
+                                    href={icon.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                ><img src={icon.image} alt={`Icon ${icon.id}`} className="h-8 w-8" /></a>
                             </div>
                         ))}
                     </div>
