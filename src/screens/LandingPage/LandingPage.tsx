@@ -79,25 +79,13 @@ export const LandingPage = (): JSX.Element => {
     <div className="font-poppins">
       <Navbar />
       <section className=" flex  flex-col md:flex-row justify-center items-center gap-10 md:gap-40 py-10 md:py-20 px-5 md:px-0 ">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}>
-          <motion.h2
-            className="font-bold text-2xl md:text-4xl text-[#4CBB17] leading-loose"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-          >Always better than cash, <br className="hidden md:block" /> Scan. Pay. Go</motion.h2>
-          <motion.p
-            className="py-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}>Redefining payments in Africa and <br /> beyond. One scan at a time.</motion.p>
+        <div>
+          <h2 className="font-bold text-2xl md:text-4xl text-[#4CBB17] leading-loose">Always better than cash, <br className="hidden md:block" /> Scan. Pay. Go</h2>
+          <p className="py-5">Redefining payments in Africa and <br /> beyond. One scan at a time.</p>
           <div className="flex items-center gap-3">
             {/* Play Store */}
             <a
-              href="https://play.google.com/store/apps/details?id=com.scaza"
+              href="https://scaza.com.ng/pilot/scaza.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white flex items-center gap-3 px-2 md:px-3 py-0 
@@ -112,7 +100,7 @@ export const LandingPage = (): JSX.Element => {
 
             {/* Apple Store */}
             <a
-              href="https://www.apple.com/app-store/"
+              href="https://scaza.com.ng/pilot/merchant.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white flex items-center gap-3 px-2
@@ -125,49 +113,36 @@ export const LandingPage = (): JSX.Element => {
               </div>
             </a>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
->
+        </div>
+        <div>
           <img src="/scaza-mockup.png" alt="" className="hidden md:block w-[300px] h-[300px] mr-20" />
-        </motion.div>
+        </div>
       </section>
       <section className="  md:py-10 flex flex-col justify-center items-center  gap-7">
-        <h1 className=" text-3xl font-bold"> The <span className="text-[#4CBB17] text-4xl font-bold">Scaza</span> Difference</h1>
-        <p className="text-base text-center md:text-left">Scaza is your trusted payment solution, offering secure and <br /> instant transactions through advanced QR code technology.</p>
+        <h1 className=" text-3xl font-bold">
+          {" "}
+          The <span className="text-[#4CBB17] text-4xl font-bold">
+            Scaza
+          </span>{" "}
+          Difference
+        </h1>
+        <p className="text-base text-center md:text-left">
+          Scaza is your trusted payment solution, offering secure and <br />{" "}
+          instant transactions through advanced QR code technology.
+        </p>
       </section>
       <section className="px-5  md:px-[180px] py-[25px]">
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-7 ">
+        <div className="relative overflow-hidden py-[50px] px-2 md:px-0" >
+          <div className=" flex flex-row gap-5 animate-scroll ">
           {
             featureCards.map((card, index) => (
-              <div key={index} className="  h-[100px] flex flex-col justify-center md:justify-start gap-2  shadow-[0_2px_8px_0_rgba(99,99,99,0.2)] py-3 px-5  rounded-xl">
+              <div key={index} className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl">
                 <img src={card.icon} alt={card.title} className="h-8 w-8 text-center" />
                 <p className="text-[12px]">{card.title}</p>
               </div>
             ))
           }
-        </div> */}
-        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
-          <div className=" flex flex-row gap-5 animate-scroll">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl"
-              >
-                <p className="py-3">{testimonial.text}</p>
-                <div className="flex items-center gap-2">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="rounded-full h-5 w-5"
-                  />
-                  <p className="text-[12px] font-bold">{testimonial.author}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        </div>
         </div>
       </section>
       <section>
@@ -176,11 +151,13 @@ export const LandingPage = (): JSX.Element => {
           {/* Text */}
           <div className="flex flex-col gap-5 md:w-1/2">
             <h2 className="text-2xl md:text-4xl text-[#225C07] font-bold">
-              One Scan + <br className="hidden md:block" /> one tap = <br className="hidden md:block" /> instant payment
+              One Scan + <br className="hidden md:block" /> one tap ={" "}
+              <br className="hidden md:block" /> instant payment
             </h2>
             <p className="text-sm md:text-base md:w-[80%] text-gray-700">
-              We built SCAZA to make payment effortless. With our scan-to-pay app and secure wallet,
-              you can pay, send and save in seconds — no cash, no stress.
+              We built SCAZA to make payment effortless. With our scan-to-pay
+              app and secure wallet, you can pay, send and save in seconds — no
+              cash, no stress.
             </p>
             <button className="bg-[#225C07] w-full md:w-[40%] text-white py-2 rounded-lg">
               Open an account
@@ -189,7 +166,11 @@ export const LandingPage = (): JSX.Element => {
 
           {/* Image */}
           <div className="md:w-1/2 flex justify-center">
-            <img src="/first-image.jpg" alt="Scaza Scan Example" className="rounded-full max-w-sm w-full" />
+            <img
+              src="/first-image.jpg"
+              alt="Scaza Scan Example"
+              className="rounded-full max-w-sm w-full"
+            />
           </div>
         </div>
 
@@ -197,7 +178,11 @@ export const LandingPage = (): JSX.Element => {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-5 md:px-40 py-5 ">
           {/* Image */}
           <div className="md:w-1/2 ">
-            <img src="/one-app.jpg" alt="Scaza App Example" className="rounded-full max-w-sm w-full" />
+            <img
+              src="/one-app.jpg"
+              alt="Scaza App Example"
+              className="rounded-full max-w-sm w-full"
+            />
           </div>
 
           {/* Text */}
@@ -206,8 +191,8 @@ export const LandingPage = (): JSX.Element => {
               One app that makes every payment easy
             </h2>
             <p className="text-sm md:text-base md:w-[70%] text-gray-700">
-              Make payments faster than ever — just scan the QR code and you’re done.
-              No cash, no cards, no hassle.
+              Make payments faster than ever — just scan the QR code and you’re
+              done. No cash, no cards, no hassle.
             </p>
           </div>
         </div>
@@ -219,20 +204,29 @@ export const LandingPage = (): JSX.Element => {
               Effortless Payment with unmatched security.
             </h2>
             <p className="text-sm md:text-base md:w-[80%] text-gray-700">
-              Our advanced QR technology ensures every payment is safe, seamless, and instantly processed.
+              Our advanced QR technology ensures every payment is safe,
+              seamless, and instantly processed.
             </p>
           </div>
 
           {/* Image */}
           <div className="md:w-1/2 flex justify-center">
-            <img src="/third-image.jpg" alt="Scaza Scan Example" className="rounded-full max-w-sm w-full" />
+            <img
+              src="/third-image.jpg"
+              alt="Scaza Scan Example"
+              className="rounded-full max-w-sm w-full"
+            />
           </div>
         </div>
         {/* Fourth Block */}
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-5 md:px-40 py-5 ">
           {/* Image */}
           <div className="md:w-1/2 ">
-            <img src="/fourth-image.jpg" alt="Scaza App Example" className="rounded-full max-w-sm w-full" />
+            <img
+              src="/fourth-image.jpg"
+              alt="Scaza App Example"
+              className="rounded-full max-w-sm w-full"
+            />
           </div>
 
           {/* Text */}
@@ -241,7 +235,8 @@ export const LandingPage = (): JSX.Element => {
               Rewards that comes with every scan.
             </h2>
             <p className="text-sm md:text-base md:w-[70%] text-gray-700">
-              With Scaza, unlock exclusive discounts and cashback rewards with transaction you make.
+              With Scaza, unlock exclusive discounts and cashback rewards with
+              transaction you make.
             </p>
           </div>
         </div>
@@ -250,40 +245,44 @@ export const LandingPage = (): JSX.Element => {
         <h2 className="text-2xl text-[#225C07] text-center font-bold">
           What our users says
         </h2>
-        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
-          <div className=" flex flex-row gap-5 animate-scroll">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl"
-              >
-                <p className="py-3">{testimonial.text}</p>
-                <div className="flex items-center gap-2">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="rounded-full h-5 w-5"
-                  />
-                  <p className="text-[12px] font-bold">{testimonial.author}</p>
-                </div>
+        <div className="grid  grid-cols-1 md:grid-cols-5 gap-5 py-[50px] px-2 md:px-0 ">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className=" flex flex-col w-full md:w-[263px]  justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl">
+              <p className=" py-3">{testimonial.text}</p>
+              <div className="flex items-center gap-2">
+                <img src={testimonial.avatar} alt={testimonial.author} className="rounded-full h-5 w-5" />
+                <p className="text-[12px] font-bold "> {testimonial.author}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       <section className="bg-[#FCFFFA] h-[250px] py-10 border border-1">
-        <h2 className="text-center text-[#225C07] text-2xl font-bold">Our Partners</h2>
-        <img src="/Partners.png" alt="Our Partners" className="mx-auto h-full object-contain" />
+        <h2 className="text-center text-[#225C07] text-2xl font-bold">
+          Our Partners
+        </h2>
+        <img
+          src="/Partners.png"
+          alt="Our Partners"
+          className="mx-auto h-full object-contain"
+        />
       </section>
       <section className="flex flex-col h-[800px] md:h-[500px] md:flex-row justify-between px-5  md:px-40 gap-20 py-20 ">
         <div className="w-full md:w-1/2 flex flex-col gap-3">
-          <h2 className="text-xl font-bold text-[#4CBB17]">Get the Scaza Qr Code card for seamless payments.</h2>
-          <p className="text-[14px]">Experience fast, secure, and effortless payments with Scaza's Qr card. Easily manage transactions, make instant payments using QR codes, and keep track of your financial activities—all from the palm of your hand.</p>
+          <h2 className="text-xl font-bold text-[#4CBB17]">
+            Get the Scaza Qr Code card for seamless payments.
+          </h2>
+          <p className="text-[14px]">
+            Experience fast, secure, and effortless payments with Scaza's Qr
+            card. Easily manage transactions, make instant payments using QR
+            codes, and keep track of your financial activities—all from the palm
+            of your hand.
+          </p>
           {/* App Store Buttons */}
           <div className="flex items-center gap-3">
             {/* Play Store */}
             <a
-              href="https://play.google.com/store/apps/details?id=com.scaza"
+              href="https://scaza.com.ng/pilot/scaza.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white flex items-center gap-3 px-2 md:px-3 py-0 
@@ -298,7 +297,7 @@ export const LandingPage = (): JSX.Element => {
 
             {/* Apple Store */}
             <a
-              href="https://www.apple.com/app-store/"
+              href="https://scaza.com.ng/pilot/merchant.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white flex items-center gap-3 px-2
@@ -313,7 +312,7 @@ export const LandingPage = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <img src="/Qr-scan.jpg" alt="QR Code" className="h-[300px] w-[350px] rounded-lg" />
+             <img src="/Qr-scan.jpg" alt="QR Code" className="h-[300px] w-[350px] rounded-lg" />
         </div>
       </section>
       <Footer />
