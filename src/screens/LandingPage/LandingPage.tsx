@@ -135,33 +135,14 @@ export const LandingPage = (): JSX.Element => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 ">
           {
             featureCards.map((card, index) => (
-              <div key={index} className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl">
+              <div key={index} className="  flex flex-col gap-4 shadow-md  px-5 text-[12px] py-3 rounded-2xl">
                 <img src={card.icon} alt={card.title} className="h-8 w-8 text-center" />
                 <p className="text-[12px]">{card.title}</p>
               </div>
             ))
           }
-        </div> */}
-        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
-          <div className=" flex flex-row gap-5 animate-scroll">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl"
-              >
-                <p className="py-3">{testimonial.text}</p>
-                <div className="flex items-center gap-2">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="rounded-full h-5 w-5"
-                  />
-                  <p className="text-[12px] font-bold">{testimonial.author}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        </div> 
+        
         
       </section>
       <section>
@@ -264,13 +245,22 @@ export const LandingPage = (): JSX.Element => {
         <h2 className="text-2xl text-[#225C07] text-center font-bold">
           What our users says
         </h2>
-        <div className="grid  grid-cols-1 md:grid-cols-5 gap-5 py-[50px] px-2 md:px-0 ">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className=" flex flex-col w-full md:w-[263px]  justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl">
-              <p className=" py-3">{testimonial.text}</p>
-              <div className="flex items-center gap-2">
-                <img src={testimonial.avatar} alt={testimonial.author} className="rounded-full h-5 w-5" />
-                <p className="text-[12px] font-bold "> {testimonial.author}</p>
+        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
+          <div className=" flex flex-row gap-5 animate-scroll">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl"
+              >
+                <p className="py-3">{testimonial.text}</p>
+                <div className="flex items-center gap-2">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    className="rounded-full h-5 w-5"
+                  />
+                  <p className="text-[12px] font-bold">{testimonial.author}</p>
+                </div>
               </div>
             ))}
           </div>
