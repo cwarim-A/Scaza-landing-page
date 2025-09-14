@@ -139,7 +139,7 @@ export const LandingPage = (): JSX.Element => {
         <p className="text-base text-center md:text-left">Scaza is your trusted payment solution, offering secure and <br /> instant transactions through advanced QR code technology.</p>
       </section>
       <section className="px-5  md:px-[180px] py-[25px]">
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-7 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 ">
           {
             featureCards.map((card, index) => (
               <div key={index} className="  h-[100px] flex flex-col justify-center md:justify-start gap-2  shadow-[0_2px_8px_0_rgba(99,99,99,0.2)] py-3 px-5  rounded-xl">
@@ -148,27 +148,8 @@ export const LandingPage = (): JSX.Element => {
               </div>
             ))
           }
-        </div> */}
-        <div className="relative overflow-hidden py-[50px] px-2 md:px-0">
-          <div className=" flex flex-row gap-5 animate-scroll">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className=" flex-shrink-0 flex flex-col w-[263px] md:w-[263px] justify-between border border-gray-400 h-[150px] px-3 text-[12px] py-2 rounded-xl"
-              >
-                <p className="py-3">{testimonial.text}</p>
-                <div className="flex items-center gap-2">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="rounded-full h-5 w-5"
-                  />
-                  <p className="text-[12px] font-bold">{testimonial.author}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+        
       </section>
       <section>
         {/* First Block */}
