@@ -50,16 +50,16 @@ export const Navbar = (): JSX.Element => {
                             <div className="absolute top-12 right-0 bg-white shadow-lg rounded-md w-full h-[300px] text-center">
                                 <ul className="flex flex-col gap-10 p-2">
                                     <li>
-                                        <a href="#personal" className="">Personal</a>
+                                        <a href="/" className="">Personal</a>
                                     </li>
                                     <li>
-                                        <a href="#business" className="">Business</a>
+                                        <a href="/" className="">Business</a>
                                     </li>
                                     <li>
-                                        <a href="#company" className="">Company</a>
+                                        <a href="/team" className="">Company</a>
                                     </li>
                                     <li>
-                                        <a href="#help" className="">Help</a>
+                                        <a href="/faq" className="">Help</a>
                                     </li>
                                 </ul>
                                 <div className="p-5">
